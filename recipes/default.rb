@@ -36,5 +36,6 @@ end
 cookbook_file "/etc/php5/conf.d/redis.ini" do
   source "redis.ini"
   action :create_if_missing
+  mode 644
 end
 
