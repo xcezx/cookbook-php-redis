@@ -9,7 +9,7 @@ depends "php"
 depends "git"
 depends "build-essential"
 
-%{ debian ubuntu }.each do |os|
+%w{ debian ubuntu }.each do |os|
   supports os
 end
 
