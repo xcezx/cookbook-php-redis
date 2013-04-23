@@ -33,7 +33,7 @@ execute "make install" do
   cwd "/usr/local/src/phpredis"
 end
 
-cookbook_file "/etc/php5/conf.d/redis.ini" do
+cookbook_file "#{node['php']['ext_conf_dir']}/redis.ini" do
   source "redis.ini"
   action :create_if_missing
   mode 644
