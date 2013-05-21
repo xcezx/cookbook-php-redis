@@ -30,7 +30,7 @@ end
 
 execute "make install" do
   command "make install"
-  cwd "#{Chef::Config[:file_cache_path]/phpredis"
+  cwd "#{Chef::Config[:file_cache_path]}/phpredis"
 end
 
 cookbook_file "#{node['php']['ext_conf_dir']}/redis.ini" do
