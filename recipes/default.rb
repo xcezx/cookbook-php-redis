@@ -7,7 +7,7 @@ include_recipe "php"
 include_recipe "git"
 include_recipe "build-essential"
 
-git "{#Chef::Config[:file_cache_path]/phpredis" do
+git "{#Chef::Config[:file_cache_path]}/phpredis" do
   repository "git://github.com/nicolasff/phpredis.git"
   reference "master"
   action :sync
@@ -15,17 +15,17 @@ end
 
 execute "phpize" do
   command "phpize"
-  cwd "{#Chef::Config[:file_cache_path]/phpredis"
+  cwd "{#Chef::Config[:file_cache_path]}/phpredis"
 end
 
 execute "configure" do
   command "./configure"
-  cwd "{#Chef::Config[:file_cache_path]/phpredis"
+  cwd "{#Chef::Config[:file_cache_path]}/phpredis"
 end
 
 execute "make" do
   command "make"
-  cwd "{#Chef::Config[:file_cache_path]/phpredis"
+  cwd "{#Chef::Config[:file_cache_path]}/phpredis"
 end
 
 execute "make install" do
